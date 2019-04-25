@@ -64,8 +64,9 @@ function siClick() {
 }
 
 function mousePos(e) {
-	mouseX = e.pageX - 382;
-	mouseY = e.pageY - 170;
+	let bound = canvas.getBoundingClientRect();
+	mouseX = e.clientX - bound.left - canvas.clientLeft;
+	mouseY = e.clientY - bound.top - canvas.clientTop;
 }
 
 function draw() {
